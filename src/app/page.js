@@ -1,113 +1,68 @@
-import Image from "next/image";
+const ticketsLinks = [
+  {
+    label: `Ingressos: 19 de Janeiro - 19:30`,
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/ea08c4da295d2046eaca7c15e991e7249f469344`,
+    inactive: new Date("2024-01-19:23:59:00") < new Date()
+  },
+  {
+    label: `Ingressos: 20 de Janeiro - 19:30`,
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/962fb3c9e2cc7d2ee3a6fe514929ebf540c68082`,
+    inactive: new Date("2024-01-20:23:59:00") < new Date()
+  },
+  {
+    label: `Ingressos: 26 de Janeiro - 19:30`,
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/4e81d698b74d878820dcbc3f35bf1d1a9d8336d3`,
+    inactive: new Date("2024-01-26:23:59:00") < new Date()
+  },
+  {
+    label: `Ingressos: 27 de Janeiro - 19:30`,
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/44f8ef5e847335adcb62f61805436f12ccd97ec3`,
+    inactive: new Date("2024-01-27:23:59:00") < new Date()
+  },
+  {
+    label: `Ingressos: 02 de Fevereiro - 19:30`,
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/6772ed447cb7a3683f3eb0c4a27c9698774becc5`,
+    inactive: new Date("2024-02-02:23:59:00") < new Date()
+  },
+  {
+    label: `Ingressos: 03 de Fevereiro - 19:30`,
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/6474a70a08feae4d299fe37a755b563fb429df3a`,
+    inactive: new Date("2024-02-03:23:59:00") < new Date()
+  },
+];
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main className="z-1 relative text-white py-16 px-8 text-center">
+      <h1 className="text-5xl font-bold">BURLESQUERIA</h1>
+      <p className="mt-8 uppercase">Estreia dia 19/01, no Teatro Café Pequeno</p>
+      <p className="uppercase">Temporada até 03/02</p>
+      <ul className="mt-8 max-w-80 mx-auto">
+        {ticketsLinks.map(({ label, href, inactive }) => (
+          <li className={`relative mt-7 rounded-full bg-white text-black flex items-center justify-center h-12 ${inactive ? "opacity-50" : "cursor-pointer"}`} key={label}>
+            {!inactive && 
+              <a className="absolute h-full w-full flex items-center justify-center" target="_blank" href={href} title={`Bulesqueria | ${label}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480.578-311.384q7.961 0 13.384-5.386 5.423-5.385 5.423-13.346t-5.386-13.384q-5.385-5.423-13.346-5.423t-13.384 5.385q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.424 13.347 5.424Zm0-150.462q7.961 0 13.384-5.385 5.423-5.386 5.423-13.347 0-7.961-5.386-13.384-5.385-5.423-13.346-5.423t-13.384 5.386q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.423 13.347 5.423Zm0-150.462q7.961 0 13.384-5.385t5.423-13.346q0-7.961-5.386-13.384-5.385-5.423-13.346-5.423t-13.384 5.385q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.423 13.347 5.423Zm292.345 406.77H187.692q-25.384 0-43.461-18.077-18.077-18.077-18.077-43.462v-100q35.307-13.077 57.346-43.84 22.038-30.763 22.038-69.173t-21.959-69.391q-21.959-30.98-57.425-44.057v-100.001q0-25.384 18.077-43.461 18.077-18.077 43.461-18.077h585.231q25.385 0 43.462 18.077t18.077 43.461v100.001q-35.308 13.077-57.346 44.024-22.039 30.947-22.039 69.264 0 38.476 21.959 69.286 21.959 30.81 57.426 43.887v100q0 25.385-18.077 43.462t-43.462 18.077Zm0-36.924q10.769 0 17.692-6.923t6.923-17.692v-76.769q-36.884-21.385-58.134-57.64-21.25-36.255-21.25-78.618 0-42.733 21.192-79.007 21.192-36.274 58.192-57.658v-76.77q0-10.769-6.923-17.692t-17.692-6.923H187.692q-10.769 0-17.692 6.923t-6.923 17.692v76.77q37 21.384 58.192 57.628 21.193 36.244 21.193 78.943 0 42.698-21.25 78.833-21.25 36.134-58.135 57.519v76.769q0 10.769 6.923 17.692t17.692 6.923h585.231ZM480.5-480.5Z"/></svg>
+                <span className="ml-2">{label}</span>
+              </a>
+            }
+            {inactive && 
+              <span className='line-through flex justify-center items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480.578-311.384q7.961 0 13.384-5.386 5.423-5.385 5.423-13.346t-5.386-13.384q-5.385-5.423-13.346-5.423t-13.384 5.385q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.424 13.347 5.424Zm0-150.462q7.961 0 13.384-5.385 5.423-5.386 5.423-13.347 0-7.961-5.386-13.384-5.385-5.423-13.346-5.423t-13.384 5.386q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.423 13.347 5.423Zm0-150.462q7.961 0 13.384-5.385t5.423-13.346q0-7.961-5.386-13.384-5.385-5.423-13.346-5.423t-13.384 5.385q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.423 13.347 5.423Zm292.345 406.77H187.692q-25.384 0-43.461-18.077-18.077-18.077-18.077-43.462v-100q35.307-13.077 57.346-43.84 22.038-30.763 22.038-69.173t-21.959-69.391q-21.959-30.98-57.425-44.057v-100.001q0-25.384 18.077-43.461 18.077-18.077 43.461-18.077h585.231q25.385 0 43.462 18.077t18.077 43.461v100.001q-35.308 13.077-57.346 44.024-22.039 30.947-22.039 69.264 0 38.476 21.959 69.286 21.959 30.81 57.426 43.887v100q0 25.385-18.077 43.462t-43.462 18.077Zm0-36.924q10.769 0 17.692-6.923t6.923-17.692v-76.769q-36.884-21.385-58.134-57.64-21.25-36.255-21.25-78.618 0-42.733 21.192-79.007 21.192-36.274 58.192-57.658v-76.77q0-10.769-6.923-17.692t-17.692-6.923H187.692q-10.769 0-17.692 6.923t-6.923 17.692v76.77q37 21.384 58.192 57.628 21.193 36.244 21.193 78.943 0 42.698-21.25 78.833-21.25 36.134-58.135 57.519v76.769q0 10.769 6.923 17.692t17.692 6.923h585.231ZM480.5-480.5Z"/></svg>
+                <span className="ml-2">{label}</span>
+              </span>
+            }
+          </li>
+        ))}
+      </ul>
+      <a className="mt-8 max-w-80 mx-auto flex justify-center items-center" target="_blank" href="https://instagram.com/burlesqueriarj">
+        <svg className="fill-white w-[36px] mh-auto block" viewBox="0 0 24 24">
+          <path d="M21.938,7.71a7.329,7.329,0,0,0-.456-2.394,4.615,4.615,0,0,0-1.1-1.694,4.61,4.61,0,0,0-1.7-1.1,7.318,7.318,0,0,0-2.393-.456C15.185,2.012,14.817,2,12,2s-3.185.012-4.29.062a7.329,7.329,0,0,0-2.394.456,4.615,4.615,0,0,0-1.694,1.1,4.61,4.61,0,0,0-1.1,1.7A7.318,7.318,0,0,0,2.062,7.71C2.012,8.814,2,9.182,2,12s.012,3.186.062,4.29a7.329,7.329,0,0,0,.456,2.394,4.615,4.615,0,0,0,1.1,1.694,4.61,4.61,0,0,0,1.7,1.1,7.318,7.318,0,0,0,2.393.456c1.1.05,1.472.062,4.29.062s3.186-.012,4.29-.062a7.329,7.329,0,0,0,2.394-.456,4.9,4.9,0,0,0,2.8-2.8,7.318,7.318,0,0,0,.456-2.393c.05-1.1.062-1.472.062-4.29S21.988,8.814,21.938,7.71Zm-1,8.534a6.351,6.351,0,0,1-.388,2.077,3.9,3.9,0,0,1-2.228,2.229,6.363,6.363,0,0,1-2.078.388C15.159,20.988,14.8,21,12,21s-3.159-.012-4.244-.062a6.351,6.351,0,0,1-2.077-.388,3.627,3.627,0,0,1-1.35-.879,3.631,3.631,0,0,1-.879-1.349,6.363,6.363,0,0,1-.388-2.078C3.012,15.159,3,14.8,3,12s.012-3.159.062-4.244A6.351,6.351,0,0,1,3.45,5.679a3.627,3.627,0,0,1,.879-1.35A3.631,3.631,0,0,1,5.678,3.45a6.363,6.363,0,0,1,2.078-.388C8.842,3.012,9.205,3,12,3s3.158.012,4.244.062a6.351,6.351,0,0,1,2.077.388,3.627,3.627,0,0,1,1.35.879,3.631,3.631,0,0,1,.879,1.349,6.363,6.363,0,0,1,.388,2.078C20.988,8.841,21,9.2,21,12S20.988,15.159,20.938,16.244Z" />
+          <path d="M17.581,5.467a.953.953,0,1,0,.952.952A.954.954,0,0,0,17.581,5.467Z"/>
+          <path d="M12,7.073A4.927,4.927,0,1,0,16.927,12,4.932,4.932,0,0,0,12,7.073Zm0,8.854A3.927,3.927,0,1,1,15.927,12,3.932,3.932,0,0,1,12,15.927Z"/>
+        </svg>
+        <p className="ml-2">Siga o Instagram: @burlesqueriarj</p>
+      </a>
     </main>
   );
 }
