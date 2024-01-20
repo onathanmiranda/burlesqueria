@@ -33,9 +33,10 @@ const ticketsLinks = [
 
 export default function Home() {
   return (
-    <main className="z-1 relative text-white py-16 px-4 text-center">
+    <main className="z-1 relative text-white py-16 px-4 text-center bg-black bg-opacity-30">
       <h1 className="text-4xl font-bold">BURLESQUERIA</h1>
-      <p className="mt-8 uppercase">Estreia dia 19/01, no Teatro Café Pequeno</p>
+      <p className="mt-4">Cia. Coros por Um</p>
+      <p className="mt-4 uppercase">Estreia dia 19/01, no Teatro Café Pequeno</p>
       <p className="uppercase">Temporada até 03/02</p>
       <ul className="mt-8 max-w-80 mx-auto">
         {ticketsLinks.map(({ label, href, inactive }) => (
