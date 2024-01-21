@@ -23,5 +23,5 @@ export default function RootLayout({ children }) {
 
 export const metadata = {
   title: "Burlesqueria | Cia. Coros Por Um",
-  description: "Cia. formada por artistas, professores e alunos do Espaço de Artes Patrícia Evans, a partir da vontade de se criar um movimento artístico diferenciado, com um humor crítico, consciente e inovador, trazendo uma mensagem de igualdade e empoderamento através das histórias dos personagens. Sejam bem-vindes à Burlesqueria, um show ágil, leve e bem-humorado, criado e dirigido por Patrícia Evans e André Sigaud."
+  description: "A Cia. Coros Por Um apresenta Burlesqueria: um show ágil, leve e bem-humorado, com uma mensagem de igualdade e empoderamento."
 }
