@@ -1,8 +1,5 @@
 "use client";
 
-import { sendGAEvent } from '@next/third-parties/google';
-import { useEffect } from 'react';
-
 const ticketsLinks = [
   {
     label: `Ingressos: 19 de Janeiro - 19:30`,
@@ -37,15 +34,6 @@ const ticketsLinks = [
 ];
 
 export default function Home() {
-  
-  useEffect(() => {
-    sendGAEvent({ 
-      event: 'page_view', 
-      page_title: document.title, 
-      page_location: location.href
-    });
-  }, []);
-
   return (
     <main className="z-1 relative text-white py-16 px-4 text-center bg-black bg-opacity-30">
       <h1 className="text-4xl font-bold">BURLESQUERIA</h1>
