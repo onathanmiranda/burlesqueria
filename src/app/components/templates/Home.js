@@ -1,39 +1,44 @@
 "use client";
 
-const ticketsLinks = [
-  {
-    label: `Ingressos: 19 de Janeiro - 19:30`,
-    href: `https://riocultura.eleventickets.com/#!/apresentacao/ea08c4da295d2046eaca7c15e991e7249f469344`,
-    inactive: new Date("2024-01-19:23:59:00") < new Date()
-  },
-  {
-    label: `Ingressos: 20 de Janeiro - 19:30`,
-    href: `https://riocultura.eleventickets.com/#!/apresentacao/962fb3c9e2cc7d2ee3a6fe514929ebf540c68082`,
-    inactive: new Date("2024-01-20:23:59:00") < new Date()
-  },
-  {
-    label: `Ingressos: 26 de Janeiro - 19:30`,
-    href: `https://riocultura.eleventickets.com/#!/apresentacao/4e81d698b74d878820dcbc3f35bf1d1a9d8336d3`,
-    inactive: new Date("2024-01-26:23:59:00") < new Date()
-  },
-  {
-    label: `Ingressos: 27 de Janeiro - 19:30`,
-    href: `https://riocultura.eleventickets.com/#!/apresentacao/44f8ef5e847335adcb62f61805436f12ccd97ec3`,
-    inactive: new Date("2024-01-27:23:59:00") < new Date()
-  },
-  {
-    label: `Ingressos: 02 de Fevereiro - 19:30`,
-    href: `https://riocultura.eleventickets.com/#!/apresentacao/6772ed447cb7a3683f3eb0c4a27c9698774becc5`,
-    inactive: new Date("2024-02-02:23:59:00") < new Date()
-  },
-  {
-    label: `Ingressos: 03 de Fevereiro - 19:30`,
-    href: `https://riocultura.eleventickets.com/#!/apresentacao/6474a70a08feae4d299fe37a755b563fb429df3a`,
-    inactive: new Date("2024-02-03:23:59:00") < new Date()
-  },
-];
+import { useMemo } from "react";
 
 export default function Home() {
+  
+  const ticketsLinks = useMemo(() => {
+    return [
+      {
+        label: `Ingressos: 19 de Janeiro - 19:30`,
+        href: `https://riocultura.eleventickets.com/#!/apresentacao/ea08c4da295d2046eaca7c15e991e7249f469344`,
+        inactive: new Date("2024-01-19:23:59:00") < new Date()
+      },
+      {
+        label: `Ingressos: 20 de Janeiro - 19:30`,
+        href: `https://riocultura.eleventickets.com/#!/apresentacao/962fb3c9e2cc7d2ee3a6fe514929ebf540c68082`,
+        inactive: new Date("2024-01-20:23:59:00") < new Date()
+      },
+      {
+        label: `Ingressos: 26 de Janeiro - 19:30`,
+        href: `https://riocultura.eleventickets.com/#!/apresentacao/4e81d698b74d878820dcbc3f35bf1d1a9d8336d3`,
+        inactive: new Date("2024-01-26:23:59:00") < new Date()
+      },
+      {
+        label: `Ingressos: 27 de Janeiro - 19:30`,
+        href: `https://riocultura.eleventickets.com/#!/apresentacao/44f8ef5e847335adcb62f61805436f12ccd97ec3`,
+        inactive: new Date("2024-01-27:23:59:00") < new Date()
+      },
+      {
+        label: `Ingressos: 02 de Fevereiro - 19:30`,
+        href: `https://riocultura.eleventickets.com/#!/apresentacao/6772ed447cb7a3683f3eb0c4a27c9698774becc5`,
+        inactive: new Date("2024-02-02:23:59:00") < new Date()
+      },
+      {
+        label: `Ingressos: 03 de Fevereiro - 19:30`,
+        href: `https://riocultura.eleventickets.com/#!/apresentacao/6474a70a08feae4d299fe37a755b563fb429df3a`,
+        inactive: new Date("2024-02-03:23:59:00") < new Date()
+      },
+    ];
+  }, []);
+
   return (
     <main className="z-1 relative text-white py-16 px-4 text-center bg-black bg-opacity-30">
       <h1 className="text-4xl font-bold">BURLESQUERIA</h1>
