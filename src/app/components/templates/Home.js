@@ -19,7 +19,7 @@ export default function Home() {
       {
         label: `Ingressos: 26 de Janeiro - 19:30`,
         href: `https://riocultura.eleventickets.com/#!/apresentacao/4e81d698b74d878820dcbc3f35bf1d1a9d8336d3`,
-        inactive: new Date('Fri Jan 26 2024 14:57:40 GMT-0300') < new Date()
+        inactive: true //new Date('Fri Jan 26 2024 14:57:40 GMT-0300') < new Date()
       },
       {
         label: `Ingressos: 27 de Janeiro - 19:30`,
