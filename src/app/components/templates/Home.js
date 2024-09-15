@@ -1,56 +1,59 @@
-"use client";
+'use client';
 
-import { useMemo } from "react";
+function generateLabel({ date }) {
+  const day = date.getDate();
+  const month = date.toLocaleString('pt-BR', { month: 'long' });
+  const year = date.getFullYear();
+  const time = date.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 
-export default function Home() {
-  
-  const ticketsLinks = useMemo(() => {
-    return [
-      {
-        label: `Ingressos: 19 de Janeiro - 19:30`,
-        href: `https://riocultura.eleventickets.com/#!/apresentacao/ea08c4da295d2046eaca7c15e991e7249f469344`,
-        inactive: new Date('Fri Jan 19 2024 14:57:40 GMT-0300') < new Date()
-      },
-      {
-        label: `Ingressos: 20 de Janeiro - 19:30`,
-        href: `https://riocultura.eleventickets.com/#!/apresentacao/962fb3c9e2cc7d2ee3a6fe514929ebf540c68082`,
-        inactive: new Date('Sat Jan 20 2024 22:00:00 GMT-0300') < new Date()
-      },
-      {
-        label: `Ingressos: 26 de Janeiro - 19:30`,
-        href: `https://riocultura.eleventickets.com/#!/apresentacao/4e81d698b74d878820dcbc3f35bf1d1a9d8336d3`,
-        inactive: true //new Date('Fri Jan 26 2024 14:57:40 GMT-0300') < new Date()
-      },
-      {
-        label: `Ingressos: 27 de Janeiro - 19:30`,
-        href: `https://riocultura.eleventickets.com/#!/apresentacao/44f8ef5e847335adcb62f61805436f12ccd97ec3`,
-        inactive: new Date('Sat Jan 27 2024 22:00:00 GMT-0300') < new Date()
-      },
-      {
-        label: `Ingressos: 02 de Fevereiro - 19:30`,
-        href: `https://riocultura.eleventickets.com/#!/apresentacao/6772ed447cb7a3683f3eb0c4a27c9698774becc5`,
-        inactive: new Date('Fri Feb 02 2024 22:00:00 GMT-0300') < new Date()
-      },
-      {
-        label: `Ingressos: 03 de Fevereiro - 19:30`,
-        href: `https://riocultura.eleventickets.com/#!/apresentacao/6474a70a08feae4d299fe37a755b563fb429df3a`,
-        inactive: new Date('Sat Feb 03 2024 22:00:00 GMT-0300') < new Date()
-      },
-    ];
-  }, []);
-  
+  return `${day} de ${month.charAt(0).toUpperCase() + month.slice(1)} - ${time}`;
+}
+
+const ticketsLinks = [
+  {
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/96bccc1e74a6c42d42a438a0b4230d5045b40138`,
+    date: new Date('Oct 04 2024 19:30:00 GMT-0300')
+  },
+  {
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/c280cbca0be1ddbcbef587b0e92fbe6dd8955fc1`,
+    date: new Date('Oct 05 2024 19:30:00 GMT-0300')
+  },
+  {
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/6c2f5f2aa0d131d405247f085e79938496c9a3df`,
+    date: new Date('Oct 06 2024 18:30:00 GMT-0300')
+  },
+  {
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/9ac77e2dd9a5568989a8f3d7f2b69727372fdbe9`,
+    date: new Date('Oct 11 2024 19:30:00 GMT-0300')
+  },
+  {
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/fca0cac255710ea92ea89ebd0dbb5147933db532`,
+    date: new Date('Oct 12 2024 19:30:00 GMT-0300')
+  },
+  {
+    href: `https://riocultura.eleventickets.com/#!/apresentacao/f62e90c70daf2cc150fb648f0286d16b8c2c0fcd`,
+    date: new Date('Oct 13 2024 18:30:00 GMT-0300')
+  },
+].map((link) => ({
+  ...link,
+  label: generateLabel(link),
+  inactive: link.date < new Date()
+}));
+
+export default function Home() {  
   return (
-    <main className="z-1 relative text-white py-16 px-4 text-center bg-black bg-opacity-30">
+    <main className="z-1 relative text-white py-16 px-4 text-center bg-black bg-opacity-30 min-h-svh">
       <h1 className="text-4xl font-bold">BURLESQUERIA</h1>
-      <p className="mt-4">Cia. Coros por Um</p>
-      <p className="mt-4 uppercase">Estreia dia 19/01, no Teatro Café Pequeno</p>
-      <p className="uppercase">Temporada até 03/02</p>
+      <p className="mt-1">Cia. Coros por Um</p>
+      <p className="mt-4">De 04/10 a 13/10 no Teatro Café Pequeno</p>
+      <p className="">Sextas e Sábados 19:30, e Domingos 18:30</p>
+      <p className="uppercase mt-4">Leve 1KG de alimento não perecível e<mb/> pague meia.</p>
       <ul className="mt-8 max-w-80 mx-auto">
         {ticketsLinks.map(({ label, href, inactive }) => (
-          <li className={`relative mt-7 rounded-full bg-white text-black flex items-center justify-center h-12 ${inactive ? "opacity-50" : "cursor-pointer"}`} key={label}>
+          <li className={`relative mt-2 rounded-full bg-white text-black inline-flex items-center justify-center h-12 ${inactive ? "opacity-50" : "cursor-pointer"}`} key={label}>
             {!inactive && 
-              <a className="absolute h-full w-full flex items-center justify-center" target="_blank" href={href} title={`Bulesqueria | ${label}`}>
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480.578-311.384q7.961 0 13.384-5.386 5.423-5.385 5.423-13.346t-5.386-13.384q-5.385-5.423-13.346-5.423t-13.384 5.385q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.424 13.347 5.424Zm0-150.462q7.961 0 13.384-5.385 5.423-5.386 5.423-13.347 0-7.961-5.386-13.384-5.385-5.423-13.346-5.423t-13.384 5.386q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.423 13.347 5.423Zm0-150.462q7.961 0 13.384-5.385t5.423-13.346q0-7.961-5.386-13.384-5.385-5.423-13.346-5.423t-13.384 5.385q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.423 13.347 5.423Zm292.345 406.77H187.692q-25.384 0-43.461-18.077-18.077-18.077-18.077-43.462v-100q35.307-13.077 57.346-43.84 22.038-30.763 22.038-69.173t-21.959-69.391q-21.959-30.98-57.425-44.057v-100.001q0-25.384 18.077-43.461 18.077-18.077 43.461-18.077h585.231q25.385 0 43.462 18.077t18.077 43.461v100.001q-35.308 13.077-57.346 44.024-22.039 30.947-22.039 69.264 0 38.476 21.959 69.286 21.959 30.81 57.426 43.887v100q0 25.385-18.077 43.462t-43.462 18.077Zm0-36.924q10.769 0 17.692-6.923t6.923-17.692v-76.769q-36.884-21.385-58.134-57.64-21.25-36.255-21.25-78.618 0-42.733 21.192-79.007 21.192-36.274 58.192-57.658v-76.77q0-10.769-6.923-17.692t-17.692-6.923H187.692q-10.769 0-17.692 6.923t-6.923 17.692v76.77q37 21.384 58.192 57.628 21.193 36.244 21.193 78.943 0 42.698-21.25 78.833-21.25 36.134-58.135 57.519v76.769q0 10.769 6.923 17.692t17.692 6.923h585.231ZM480.5-480.5Z"/></svg>
+              <a className="h-full w-full flex items-center justify-center px-8" target="_blank" href={href} title={`Bulesqueria | ${label}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path  d="M480.578-311.384q7.961 0 13.384-5.386 5.423-5.385 5.423-13.346t-5.386-13.384q-5.385-5.423-13.346-5.423t-13.384 5.385q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.424 13.347 5.424Zm0-150.462q7.961 0 13.384-5.385 5.423-5.386 5.423-13.347 0-7.961-5.386-13.384-5.385-5.423-13.346-5.423t-13.384 5.386q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.423 13.347 5.423Zm0-150.462q7.961 0 13.384-5.385t5.423-13.346q0-7.961-5.386-13.384-5.385-5.423-13.346-5.423t-13.384 5.385q-5.423 5.385-5.423 13.346t5.385 13.384q5.386 5.423 13.347 5.423Zm292.345 406.77H187.692q-25.384 0-43.461-18.077-18.077-18.077-18.077-43.462v-100q35.307-13.077 57.346-43.84 22.038-30.763 22.038-69.173t-21.959-69.391q-21.959-30.98-57.425-44.057v-100.001q0-25.384 18.077-43.461 18.077-18.077 43.461-18.077h585.231q25.385 0 43.462 18.077t18.077 43.461v100.001q-35.308 13.077-57.346 44.024-22.039 30.947-22.039 69.264 0 38.476 21.959 69.286 21.959 30.81 57.426 43.887v100q0 25.385-18.077 43.462t-43.462 18.077Zm0-36.924q10.769 0 17.692-6.923t6.923-17.692v-76.769q-36.884-21.385-58.134-57.64-21.25-36.255-21.25-78.618 0-42.733 21.192-79.007 21.192-36.274 58.192-57.658v-76.77q0-10.769-6.923-17.692t-17.692-6.923H187.692q-10.769 0-17.692 6.923t-6.923 17.692v76.77q37 21.384 58.192 57.628 21.193 36.244 21.193 78.943 0 42.698-21.25 78.833-21.25 36.134-58.135 57.519v76.769q0 10.769 6.923 17.692t17.692 6.923h585.231ZM480.5-480.5Z"/></svg>
                 <span className="ml-2 text-xs uppercase">{label}</span>
               </a>
             }

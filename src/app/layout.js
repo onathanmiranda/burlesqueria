@@ -1,18 +1,12 @@
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 import "./globals.css";
+import "./index.css";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <body 
-        style={{
-          backgroundImage: `url("Burlesqueria_Teatro_Café_Pequeno_por_Renan_Olivetti.jpeg")`,
-          backgroundPosition: `center center`,
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat'
-        }}
         className={`bg-black`}>
         {children}
       </body>
