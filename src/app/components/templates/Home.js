@@ -3,7 +3,7 @@
 function generateLabel({ date }) {
   const day = date.getDate();
   const month = date.toLocaleString('pt-BR', { month: 'long' });
-  const year = date.getFullYear();
+  //const year = date.getFullYear();
   const time = date.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 
   return `${day} de ${month.charAt(0).toUpperCase() + month.slice(1)} - ${time}`;
