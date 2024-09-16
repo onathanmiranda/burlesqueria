@@ -50,7 +50,8 @@ export default function Home() {
         <p className="mt-4">De 04/10 a 13/10 no Teatro Café Pequeno</p>
         <p className="">Sextas e Sábados 19:30 e Domingos 18:30</p>
         <p className="uppercase mt-4">Leve 1KG de alimento não perecível e<mb/> pague meia.</p>
-        <ul className="mt-8 max-w-80 mx-auto lg:ml-0 lg:mr-auto flex flex-col items-center content-center">
+        <h2 className="mt-8">Garanta seu Ingresso:</h2>
+        <ul className="mt-2 max-w-80 mx-auto lg:ml-0 lg:mr-auto">
           {ticketsLinks.map(({ label, href, inactive }) => (
             <li className={`relative mt-2 rounded-full bg-white text-black inline-flex items-center justify-center h-12 ${inactive ? "opacity-50" : "cursor-pointer"}`} key={label}>
               {!inactive && 
